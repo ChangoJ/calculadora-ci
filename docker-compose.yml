@@ -1,0 +1,13 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    ports:
+      - "8990:8080"  # Mapea el puerto 8080 del contenedor al 8990 del host
+      - "50000:50000"  # Mapea el puerto 50000 para agentes Jenkins
+    volumes:
+      - ./jenkins_home:/var/jenkins_home  # Persiste datos de Jenkins en el directorio local
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins"  # Configura el prefijo de la URL de Jenkins
+volumes:
+  jenkins_home:  # Define un volumen nombrado para persistencia
