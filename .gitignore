@@ -15,6 +15,7 @@ package-lock.json
 dist/
 build/
 coverage/
+jenkins_home/
 
 # Archivos del sistema operativo
 .DS_Store  # macOS
